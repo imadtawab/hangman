@@ -1,0 +1,286 @@
+html {
+  font-family: sans-serif;
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+}
+
+.container .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 15px;
+  font-size: 18px;
+}
+
+.container .info .title {
+  color: #009688;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.container .info .categorie {
+  color: #000;
+}
+
+.container .info .categorie span {
+  color: #009688;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.container .parent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
+.container .parent .hangman {
+  background-color: #f7f7f7e0;
+  padding: 42px 0;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.container .parent .hangman .base {
+  width: 0px;
+  height: 385px;
+  border: 3px solid #222;
+  margin-left: 30%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.container .parent .hangman .base::before {
+  content: "";
+  border: 3px solid #222;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 160px;
+}
+
+.container .parent .hangman .base::after {
+  content: "";
+  border: 3px solid #222;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 120px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.container .parent .hangman .base .hang {
+  position: absolute;
+  left: 160px;
+  top: 30px;
+  height: 50px;
+  width: 0;
+  border: 3px solid #222;
+}
+
+.container .parent .hangman .base .hang:before {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: -43px;
+  border: 3px dashed #222;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+
+.container .parent .hangman .base .hang .body {
+  border: 3px solid #222;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: absolute;
+  top: 60px;
+  left: -33px;
+}
+
+.container .parent .hangman .base .hang .body .head {
+  border: 3px solid #222;
+  position: absolute;
+  top: 60px;
+  left: 26px;
+  height: 130px;
+}
+
+.container .parent .hangman .base .hang .body .head .main::before {
+  content: "";
+  border: 3px solid #222;
+  position: absolute;
+  left: 24px;
+  height: 70px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.container .parent .hangman .base .hang .body .head .main::after {
+  content: "";
+  border: 3px solid #222;
+  position: absolute;
+  left: -30px;
+  height: 70px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.container .parent .hangman .base .hang .body .head .pied {
+  position: absolute;
+  top: 120px;
+}
+
+.container .parent .hangman .base .hang .body .head .pied::before {
+  content: "";
+  border: 3px solid #222;
+  position: absolute;
+  left: 24px;
+  height: 70px;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.container .parent .hangman .base .hang .body .head .pied::after {
+  content: "";
+  border: 3px solid #222;
+  position: absolute;
+  left: -30px;
+  height: 70px;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+
+.container .parent .letters {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+}
+
+.container .parent .letters span {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #009688;
+  color: #fff;
+  padding: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 25px;
+  height: 25px;
+  margin: 3px;
+  cursor: pointer;
+}
+
+.container .parent .letters span:hover {
+  opacity: .6;
+}
+
+.container .letters-table {
+  background: #f8f8f8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 18px;
+  gap: 7px;
+}
+
+.container .letters-table span {
+  background-color: #fff;
+  width: 45px;
+  height: 45px;
+  font-weight: bold;
+  font-size: 25px;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  color: #009688;
+  border-bottom: 4px solid #222;
+}
+
+.container .letters-table span.space {
+  border: none;
+  background-color: transparent;
+  color: #222;
+}
+
+.parent .hangman .base,
+.parent .hangman .base::before,
+.parent .hangman .base .hang,
+.parent .hangman .base .hang:before,
+.parent .hangman .base .hang .body,
+.parent .hangman .base .hang .body .head,
+.main,
+.pied {
+  opacity: 0;
+}
+
+.wrong1 .parent .hangman .base {
+  opacity: 1;
+}
+
+.wrong2 .parent .hangman .base::before {
+  opacity: 1;
+}
+
+.wrong3 .parent .hangman .base .hang {
+  opacity: 1;
+}
+
+.wrong4 .parent .hangman .base .hang:before {
+  opacity: 1;
+}
+
+.wrong5 .parent .hangman .base .hang .body {
+  opacity: 1;
+}
+
+.wrong6 .parent .hangman .base .hang .body .head {
+  opacity: 1;
+}
+
+.wrong7 .main {
+  opacity: 1;
+}
+
+.wrong8 .pied {
+  opacity: 1;
+}
+
+@media (max-width: 500px) {
+  .container .parent {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .container .parent .hangman {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+/*# sourceMappingURL=project12.css.map */
