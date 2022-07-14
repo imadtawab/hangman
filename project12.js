@@ -69,18 +69,20 @@ containerLetters.onclick=(eo) => {
 let wrongTime = 1
 function checkLetterClicked(eo) {
     if (randomWord[indexLetter].toLowerCase() == eo.target.innerText.toLowerCase()) {
-        lettersTable.childNodes[indexLetter].innerText = eo.target.innerText
-        indexLetter++ 
-    }else{
-        // console.log("this-is-false");
-        if(wrongTime<=8){
-            if(wrongTime==8){
-                console.log("GAME-OVER")
-            }
-            console.log(`wrong${wrongTime}`)
-            document.querySelector(".container").classList.add(`wrong${wrongTime}`)
-            wrongTime++
-            
+    lettersTable.childNodes[indexLetter].innerText = eo.target.innerText
+    indexLetter++ 
+}else{
+    // console.log("this-is-false");
+    if(wrongTime<=8){
+        if(wrongTime==8){
+            console.log("GAME-OVER")
         }
+        console.log(`wrong${wrongTime}`)
+        document.querySelector(".container").classList.add(`wrong${wrongTime}`)
+        wrongTime++
+        
     }
 }
+}
+
+

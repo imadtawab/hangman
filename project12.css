@@ -228,17 +228,6 @@ html {
   color: #222;
 }
 
-.parent .hangman .base,
-.parent .hangman .base::before,
-.parent .hangman .base .hang,
-.parent .hangman .base .hang:before,
-.parent .hangman .base .hang .body,
-.parent .hangman .base .hang .body .head,
-.main,
-.pied {
-  opacity: 0;
-}
-
 .wrong1 .parent .hangman .base {
   opacity: 1;
 }
@@ -271,6 +260,18 @@ html {
   opacity: 1;
 }
 
+.container .parent .hangman .base::after,
+.container .parent .hangman .base,
+.container .parent .hangman .base::before,
+.container .parent .hangman .base .hang,
+.container .parent .hangman .base .hang .body .head,
+.container .parent .hangman .base .hang .body .head .main::before,
+.container .parent .hangman .base .hang .body .head .main::after,
+.container .parent .hangman .base .hang .body .head .pied::before,
+.container .parent .hangman .base .hang .body .head .pied::after {
+  background-color: #222;
+}
+
 @media (max-width: 500px) {
   .container .parent {
     -webkit-box-orient: vertical;
@@ -281,6 +282,22 @@ html {
   .container .parent .hangman {
     -webkit-transform: scale(0.9);
             transform: scale(0.9);
+  }
+  .container .parent .hangman .base {
+    height: 300px;
+  }
+  .container .parent .hangman .base::before {
+    top: 20px;
+  }
+  .container .parent .hangman .base .hang {
+    top: 20px;
+    height: 40px;
+  }
+  .container .parent .hangman .base .hang:before {
+    top: 40px;
+  }
+  .container .parent .hangman .base .hang .body {
+    top: 50px;
   }
 }
 /*# sourceMappingURL=project12.css.map */
